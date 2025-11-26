@@ -24,3 +24,147 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+
+/* @tailwind base;
+@tailwind components; */
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background: #000;
+    color: #fff;
+  }
+}
+
+@layer utilities {
+  .font-sans {
+    font-family: var(--font-inter), sans-serif;
+  }
+  
+  .font-mono {
+    font-family: var(--font-orbitron), monospace;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 1;
+    width: 0;
+  }
+  70% {
+    opacity: 1;
+    width: 100px;
+  }
+  100% {
+    transform: translateX(300px) translateY(300px) rotate(45deg);
+    opacity: 0;
+    width: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.8), 0 0 60px rgba(147, 51, 234, 0.6);
+  }
+}
+
+@keyframes meteor {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(215deg) translateX(-500px);
+    opacity: 0;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shooting-star {
+  animation: shooting-star 3s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-meteor {
+  animation: meteor 3s linear infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #3b82f6, #8b5cf6);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #2563eb, #7c3aed);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Space background with stars */
+.space-bg {
+  background: 
+    radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%),
+    linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px),
+    linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px);
+  background-size: 100% 100%, 20px 20px, 20px 20px;
+}
+
+/* Glass morphism */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
