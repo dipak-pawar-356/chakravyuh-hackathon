@@ -1,18 +1,11 @@
-import { client, urlFor } from "@/lib/sanity";
-import TeamCard from "@/components/TeamCard";
+import TeamSection from '@/components/sections/team/TeamSection';
+import { Metadata } from 'next';
 
-async function getTeam() {
-  return await client.fetch(`*[_type == "teamMember"]{_id, name, role, linkedin, "imageUrl": photo.asset->url}`);
-}
+export const metadata: Metadata = {
+  title: 'Team - CHAKRAVYUH 2.0',
+  description: 'Meet the organizing team behind CHAKRAVYUH 2.0',
+};
 
-export default async function TeamPage() {
-  const team = await getTeam();
-
-  return (
-    <section className="p-8 grid gap-6 md:grid-cols-3">
-      {team.map((member: any) => (
-        <TeamCard key={member._id} {...member} imageUrl={urlFor(member.imageUrl).url()} />
-      ))}
-    </section>
-  );
+export default function TeamPage() {
+  return <TeamSection />;
 }

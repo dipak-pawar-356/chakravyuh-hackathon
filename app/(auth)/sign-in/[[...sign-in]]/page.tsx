@@ -1,9 +1,8 @@
 import { SignIn } from '@clerk/nextjs'
-import { div } from 'motion/react-client'
 
 export default function Page() {
   return (
-    <div className="flex h-screen w-full items-center justify-center bg-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-blue-900 flex items-center justify-center">
       <SignIn />
     </div>
   )

@@ -1,19 +1,17 @@
 'use client';
 import { motion } from 'framer-motion';
-import CountdownTimer from '@/components/ui/countdown';
-import StarBackground from '@/components/ui//StarBackground';
+import CountdownTimer from '@/components/ui/CountdownTimer';
+import StarBackground from '@/components/ui/StarBackground';
 import FloatingAstronaut from '@/components/ui/FloatingAstronaut';
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-black via-purple-900 to-blue-900">
-      {/* Animated Background Elements */}
       <StarBackground />
       <FloatingAstronaut />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
-          {/* Main Title */}
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -53,7 +51,6 @@ const HeroSection = () => {
             </motion.p>
           </motion.div>
 
-          {/* Countdown Timer */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -63,7 +60,6 @@ const HeroSection = () => {
             <CountdownTimer targetDate="2024-12-01T00:00:00" />
           </motion.div>
 
-          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,10 +72,6 @@ const HeroSection = () => {
                 className="group relative bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-2xl hover:shadow-blue-500/50 inline-flex items-center"
               >
                 <span className="relative z-10">Launch Your Journey</span>
-                <motion.div
-                  className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{ filter: 'blur(10px)' }}
-                />
               </a>
             </motion.div>
             
@@ -99,7 +91,6 @@ const HeroSection = () => {
             </motion.div>
           </motion.div>
 
-          {/* Stats */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -127,29 +118,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="flex flex-col items-center text-blue-300"
-        >
-          <span className="text-sm mb-2">Explore More</span>
-          <div className="w-6 h-10 border-2 border-blue-400 rounded-full flex justify-center">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="w-1 h-3 bg-blue-400 rounded-full mt-2"
-            />
-          </div>
-        </motion.div>
-      </motion.div>
     </section>
   );
 };

@@ -5,7 +5,6 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/navbar";
 import Footer from "@/components/layout/footer";
-import { ScrollContainer } from "sanity";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -48,7 +47,6 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
-          <ScrollContainer />
         </body>
       </html>
     </ClerkProvider>

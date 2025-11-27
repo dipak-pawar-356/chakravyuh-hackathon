@@ -2,8 +2,8 @@ import { SignUp } from '@clerk/nextjs'
 
 export default function Page() {
   return (
-     <div className="flex h-screen w-full items-center justify-center bg-gray-100">
-          <SignUp />
+    <div className="min-h-screen bg-gradient-to-br from-black via-purple-900 to-blue-900 flex items-center justify-center">
+      <SignUp />
     </div>
   )
 }

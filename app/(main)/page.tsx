@@ -1,3 +1,38 @@
+import HeroSection from './hero/page';
+import AboutSection from './about/page';
+import ScheduleSection from './schedule/page';
+import PrizesSection from './prizes/page';
+import ThemesSection from './themes/page';
+import SponsorsSection from './sponsors/page';
+import JudgesSection from './judge/page';
+import TeamSection from './team/page';
+import FAQSection from './faq/page';
+import ContactSection from './contact/page';
+
+export default function Home() {
+  return (
+    <>
+      <HeroSection />
+      <AboutSection />
+      <ScheduleSection />
+      <PrizesSection />
+      <ThemesSection />
+      <SponsorsSection />
+      <JudgesSection />
+      <TeamSection />
+      <FAQSection />
+      <ContactSection />
+    </>
+  );
+}
+
+
+
+
+
+
+
+
 // "use client";
 
 // import Image from "next/image";
@@ -48,41 +83,3 @@
 //     </main>
 //   );
 // }
-
-
-
-
-
-
-
-
-
-
-
-import HeroSection from '@/components/sections/HeroSection';
-import AboutSection from '@/components/sections/AboutSection';
-import ScheduleSection from '@/components/sections/ScheduleSection';
-import PrizesSection from '@/components/sections/PrizesSection';
-import ThemesSection from '@/components/sections/ThemesSection';
-import SponsorsSection from '@/components/sections/SponsorsSection';
-import JudgesSection from '@/components/sections/JudgesSection';
-import TeamSection from '@/components/sections/TeamSection';
-import FAQSection from '@/components/sections/FAQSection';
-import ContactSection from '@/components/sections/ContactSection';
-
-export default function Home() {
-  return (
-    <>
-      <HeroSection />
-      <AboutSection />
-      <ScheduleSection />
-      <PrizesSection />
-      <ThemesSection />
-      <SponsorsSection />
-      <JudgesSection />
-      <TeamSection />
-      <FAQSection />
-      <ContactSection />
-    </>
-  );
-}
